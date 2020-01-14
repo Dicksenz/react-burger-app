@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-burger-app/static/css/main.b7774d56.chunk.css",
+    "main.js": "/react-burger-app/static/js/main.62f6cbfb.chunk.js",
+    "main.js.map": "/react-burger-app/static/js/main.62f6cbfb.chunk.js.map",
+    "runtime~main.js": "/react-burger-app/static/js/runtime~main.1677f4ac.js",
+    "runtime~main.js.map": "/react-burger-app/static/js/runtime~main.1677f4ac.js.map",
+    "static/js/2.5ae1aa28.chunk.js": "/react-burger-app/static/js/2.5ae1aa28.chunk.js",
+    "static/js/2.5ae1aa28.chunk.js.map": "/react-burger-app/static/js/2.5ae1aa28.chunk.js.map",
+    "index.html": "/react-burger-app/index.html",
+    "precache-manifest.764e687e2c9e88e9a2c1f1e2563ba787.js": "/react-burger-app/precache-manifest.764e687e2c9e88e9a2c1f1e2563ba787.js",
+    "service-worker.js": "/react-burger-app/service-worker.js",
+    "static/css/main.b7774d56.chunk.css.map": "/react-burger-app/static/css/main.b7774d56.chunk.css.map",
+    "static/media/burger-logo.png": "/react-burger-app/static/media/burger-logo.b8503d26.png"
+  }
+}
