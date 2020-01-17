@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-burger-app/static/css/main.b7774d56.chunk.css",
-    "main.js": "/react-burger-app/static/js/main.d8e4e4b7.chunk.js",
-    "main.js.map": "/react-burger-app/static/js/main.d8e4e4b7.chunk.js.map",
+    "main.css": "/react-burger-app/static/css/main.e3ae49ca.chunk.css",
+    "main.js": "/react-burger-app/static/js/main.dcd86f1b.chunk.js",
+    "main.js.map": "/react-burger-app/static/js/main.dcd86f1b.chunk.js.map",
     "runtime~main.js": "/react-burger-app/static/js/runtime~main.1677f4ac.js",
     "runtime~main.js.map": "/react-burger-app/static/js/runtime~main.1677f4ac.js.map",
-    "static/js/2.5ae1aa28.chunk.js": "/react-burger-app/static/js/2.5ae1aa28.chunk.js",
-    "static/js/2.5ae1aa28.chunk.js.map": "/react-burger-app/static/js/2.5ae1aa28.chunk.js.map",
+    "static/js/2.8597b7a0.chunk.js": "/react-burger-app/static/js/2.8597b7a0.chunk.js",
+    "static/js/2.8597b7a0.chunk.js.map": "/react-burger-app/static/js/2.8597b7a0.chunk.js.map",
     "index.html": "/react-burger-app/index.html",
-    "precache-manifest.0774b07211c637d3386c483c9b8b226f.js": "/react-burger-app/precache-manifest.0774b07211c637d3386c483c9b8b226f.js",
+    "precache-manifest.2ff0df7d21e66bf94e728e87ede68b97.js": "/react-burger-app/precache-manifest.2ff0df7d21e66bf94e728e87ede68b97.js",
     "service-worker.js": "/react-burger-app/service-worker.js",
-    "static/css/main.b7774d56.chunk.css.map": "/react-burger-app/static/css/main.b7774d56.chunk.css.map",
+    "static/css/main.e3ae49ca.chunk.css.map": "/react-burger-app/static/css/main.e3ae49ca.chunk.css.map",
     "static/media/burger-logo.png": "/react-burger-app/static/media/burger-logo.b8503d26.png"
   }
 }
