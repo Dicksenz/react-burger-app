@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Aux from "../../hoc/Auxiliary";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
@@ -6,24 +6,28 @@ import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import axios from "../../axios-orders";
 import Spinner from "../../components/UI/Spinner/Spinner";
+// import WithErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 const BurgerBuilder = props => {
+  useEffect(() => {
+    axios
+      .get("https://react-my-burger-177b2.firebaseio.com/ingredients.json")
+      .then(response => setIngredients(response.data))
+      .catch(error => console.log(error));
+  }, []);
+
   const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
     meat: 1.3,
     bacon: 0.7
   };
-  const [ingredients, setIngredients] = React.useState({
-    salad: 0,
-    bacon: 0,
-    cheese: 0,
-    meat: 0
-  });
+  const [ingredients, setIngredients] = React.useState(null);
 
   const [totalPrice, setTotalPrice] = React.useState(4);
   const [purchasable, setPurchasable] = React.useState(false);
   const [purchasing, setPurchasing] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+  console.log(ingredients);
 
   const updatePurchaseState = ing => {
     const newIngredients = { ...ing };
@@ -105,14 +109,32 @@ const BurgerBuilder = props => {
     disabledInfo[key] = disabledInfo[key] <= 0;
   }
 
-  let orderSummary = (
-    <OrderSummary
-      purchaseCancelled={purchaseCancelHandler}
-      purchaseContinued={purchaseContinueHandler}
-      ingredients={ingredients}
-      price={totalPrice}
-    />
-  );
+  let burger = <Spinner />;
+  let orderSummary = null;
+
+  if (ingredients) {
+    burger = (
+      <Aux>
+        <Burger ingredients={ingredients} />
+        <BuildControls
+          ingredientsRemoved={removeIngredientHandler}
+          ingredientsAdded={addIngredientHandler}
+          disabled={disabledInfo}
+          price={totalPrice}
+          ordered={purchaseHandler}
+          purchasable={purchasable}
+        />
+      </Aux>
+    );
+    orderSummary = (
+      <OrderSummary
+        purchaseCancelled={purchaseCancelHandler}
+        purchaseContinued={purchaseContinueHandler}
+        ingredients={ingredients}
+        price={totalPrice}
+      />
+    );
+  }
 
   if (loading) {
     orderSummary = <Spinner />;
@@ -122,15 +144,7 @@ const BurgerBuilder = props => {
       <Modal show={purchasing} modalClosed={purchaseCancelHandler}>
         {orderSummary}
       </Modal>
-      <Burger ingredients={ingredients} />
-      <BuildControls
-        ingredientsRemoved={removeIngredientHandler}
-        ingredientsAdded={addIngredientHandler}
-        disabled={disabledInfo}
-        price={totalPrice}
-        ordered={purchaseHandler}
-        purchasable={purchasable}
-      />
+      {burger}
     </Aux>
   );
 };
